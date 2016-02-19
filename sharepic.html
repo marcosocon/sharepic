@@ -1,14 +1,27 @@
 <head>
-  <title>sharepic</title>
+  <title>Sharepic project by Marcos Ocón</title>
 </head>
 
 <body>
   <h1>Welcome to Meteor!</h1>
 
-  {{> hello}}
+  {{> images}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="images">
+<div class="container">
+  <div class="row">
+    {{#each images}}
+    <div class="col-xs-12 col-md-3">
+      <div class="thumb">
+        <img src="{{img_src}}" alt="{{img_alt}}" class="img-responsive">
+      </div>
+      <div class="desc">
+        <p>Image description</p>
+        <strong>a year ago</strong>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
 </template>
